@@ -3,7 +3,6 @@
 #include "gmock/gmock.h"
 #include "hw1.h"
 
-/*
 TEST(HW1Test, ZEROS) {
     Matrix matrix{algebra::zeros(5, 6)};
 
@@ -233,7 +232,6 @@ TEST(HW1Test, INVERSE1) {
     EXPECT_NEAR(inverse[0][3], 0, 0.03);
 }
 
-
 TEST(HW1Test, INVERSE2) {
     // test case
     Matrix matrix{{-12, 1.5, -1.75, -2}, {-2, 2.5, -2.75, -3}, {25, 3.5, -3.75, -4}, {4, 4.5, 4.75, -51}};
@@ -360,7 +358,3 @@ TEST(HW1Test, BONUS) {
     EXPECT_NEAR(res2[2][1], 0, 0.03);
     EXPECT_NEAR(res2[2][2], 39/4.0, 0.03);
 }
-*/
-
-
-
