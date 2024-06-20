@@ -91,16 +91,17 @@ namespace algebra
             throw logic_error("matrices with wrong dimensions cannot be multiplied.");
         }
         Matrix result = zeros(m1, n2);
-        for (int i = 0; i < m1; i++)
-        {
-            for (int j = 0; j < n2; j++)
+
+        // better cache performance for large matrix
+        for (int k = 0; k < n1; k++)
+            for (int i = 0; i < m1; i++)
             {
-                for (int k = 0; k < n1; k++)
+                double matrix1_ik = matrix1[i][k];
+                for (int j = 0; j < n2; j++)
                 {
-                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                    result[i][j] += matrix1_ik * matrix2[k][j];
                 }
             }
-        }
         return result;
     }
 
